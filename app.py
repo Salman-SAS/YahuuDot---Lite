@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 from dotenv import load_dotenv
-from google import genai
+import google.generativeai as genai
 
 # -----------------------------
 # LOAD ENV
@@ -11,13 +11,15 @@ load_dotenv()
 api_key = os.getenv("GEMINI_API_KEY")
 
 if not api_key:
-    st.error("❌ Missing GEMINI_API_KEY in .env")
+    st.error("❌ Missing GEMINI_API_KEY")
     st.stop()
 
 # -----------------------------
-# INIT CLIENT (NEW SDK)
+# CONFIGURE GEMINI
 # -----------------------------
-client = genai.Client(api_key=api_key)
+genai.configure(api_key=api_key)
+
+model = genai.GenerativeModel("gemini-1.5-flash")
 
 # -----------------------------
 # RISK METER
@@ -97,10 +99,7 @@ Content:
 """
 
         try:
-            response = client.models.generate_content(
-                model="gemini-2.5-flash",
-                contents=prompt
-            )
+            response = model.generate_content(prompt)
 
             st.success("Analysis Complete")
             st.markdown(response.text)
