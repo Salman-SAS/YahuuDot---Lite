@@ -1,42 +1,20 @@
-#YahuuDot Lite
+# YaahuDot Lite
 
-AI-powered fraud detection system that analyzes phishing messages, scam emails, and malicious links using Google Gemini AI.
+AI-powered fraud investigation agent that analyzes suspicious emails, phishing attempts, scam messages, and malicious links using autonomous AI reasoning.
 
----
+## Features
+- Phishing detection
+- Fraud analysis
+- Risk scoring
+- Threat recommendations
 
-##  What it does
-
-- Detects phishing attempts
-- Identifies scam messages
-- Flags impersonation attacks
-- Analyzes social engineering tactics
-- Detects malicious links
-
-Outputs:
-- Threat Summary
-- Risk Score (LOW → CRITICAL)
-- Key Indicators
-- Recommended Actions
-
-
-##  Problem it solves
-
-Online fraud and phishing attacks are increasing rapidly. Users struggle to identify malicious messages. YahuuDot Lite provides instant AI-powered threat detection to improve digital safety.
-
-
-## Tech Stack
-
+## Stack
 - Python
 - Streamlit
-- Google Gemini AI
-- dotenv
+- Gemini API
 
+## Run Locally
 
-## Key Feature
-
-Real-time AI cybersecurity analysis with structured risk scoring.
-
-
-## 🛡️ Status
-
-Hackathon MVP (working prototype)
+```bash
+pip install -r requirements.txt
+streamlit run app.py
